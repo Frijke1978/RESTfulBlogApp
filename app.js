@@ -60,6 +60,22 @@ app.post("/blogs", function(req, res){
     });
 });
 
+// SHOW ROUTE
+
+// app.get("/blogs/:id", function(req, res){
+//     res.send("show Page!");
+// });
+
+app.get("/blogs/:id", function(req, res){
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs");
+        } else {
+            res.render("show", {blog: foundBlog});
+        }
+    })
+});
+
 app.listen(3002, function(){
     console.log( "The REST Server has started!!");
 });
