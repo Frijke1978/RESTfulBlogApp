@@ -1,0 +1,19 @@
+<%- include ("partials/header") %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= blog.title %></div>
+    <div class="ui top attached segment">
+        <div class="item">
+            <img class="ui centered rounded image" src="<%= blog.image %>">
+            <div class="content">
+                <span><%= blog.creates.toDateString() %></span>
+            </div>
+            <div class="description">
+                <p><%- blog.body %></p>  <!-- The - tells ejs to also accept html code in the 
+                text ( but becarefull, if a <script>  tag is entered you can fire javascript code that will be executed) -->               
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ("partials/footer") %>
