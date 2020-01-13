@@ -12,6 +12,10 @@
                 <p><%- blog.body %></p>  <!-- The - tells ejs to also accept html code in the 
                 text ( but becarefull, if a <script>  tag is entered you can fire javascript code that will be executed) -->               
             </div>
+            <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="ui red basic button">Delete</button>
+            </form>
         </div>
     </div>
 </div>
